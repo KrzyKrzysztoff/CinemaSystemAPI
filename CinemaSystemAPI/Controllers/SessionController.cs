@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CinemaSystemAPI.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,14 +7,28 @@ using System.Threading.Tasks;
 
 namespace CinemaSystemAPI.Controllers
 {
-    [Route("api/cinema")]
+    [Route("api/session")]
     [ApiController]
     public class SessionController : ControllerBase
     {
-        [HttpGet("getSession/{id}")]
-        public ActionResult GetSession()
+        private readonly ISessionService sessionService;
+
+        public SessionController(ISessionService sessionService)
         {
-            return View();
+            this.sessionService = sessionService;
+        }
+
+        [HttpGet("getSession/{id}")]
+        public ActionResult GetSession([FromRoute] int id)
+        {
+            var sessionDto = sessionService.GetById(id);
+
+            if (sessionDto is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(sessionDto);
         }
     }
 }
