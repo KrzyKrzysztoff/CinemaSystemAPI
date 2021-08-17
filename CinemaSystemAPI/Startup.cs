@@ -33,6 +33,7 @@ namespace CinemaSystemAPI
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             services.AddScoped<CinemaSeeder>();
             services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<ITicketService, TicketService>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddDbContext<CinemaDbContext>();
             services.AddControllers();

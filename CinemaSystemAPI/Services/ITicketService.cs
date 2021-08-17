@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CinemaSystemAPI.Services
 {
-    public interface ISessionService
+    public interface ITicketService
     {
-        SessionDto GetById(int id);
-        List<SessionDto> GetAll();
-        Session Create(CreateSessionDto dto);
+        Ticket Create(CreateTicketDto dto);
+        TicketDto GetById(int id);
+        List<TicketDto> GetAll();
+        Ticket Update();
         void Delete(int id);
-        Session Update(int id, UpdateSessionDto dto);
     }
 }

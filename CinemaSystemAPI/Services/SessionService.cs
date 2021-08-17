@@ -21,19 +21,54 @@ namespace CinemaSystemAPI.Services
             this.mapper = mapper;
         }
 
-        public void Create(CreateSessionDto dto)
+        public Session Create(CreateSessionDto dto)
         {
-            throw new NotImplementedException();
+            var session = mapper.Map<Session>(dto);
+
+            if (session == null)
+            {
+                throw new IsNullOrEmpty("Object is null or empty");
+            }
+
+            cinemaDbContext.Sessions.Add(session);
+
+            cinemaDbContext.SaveChanges();
+
+            return session;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var session = cinemaDbContext.Sessions.FirstOrDefault(x => x.Id == id);
+
+            if (id == 0 || session == null)
+            {
+                throw new NotFoundExcption("Not found session");
+            }
+
+            cinemaDbContext.Remove(session);
+
+            cinemaDbContext.SaveChanges();
+
+          
         }
 
         public List<SessionDto> GetAll()
         {
-            throw new NotImplementedException();
+            var sessions = cinemaDbContext
+                .Sessions
+                .Include(x=>x.Movie)
+                .Include(y=>y.Room)
+                .ToList();
+
+            if (sessions == null)
+            {
+                return null;
+            }
+
+            var sessionsDto = mapper.Map<List<SessionDto>>(sessions);
+
+            return sessionsDto;
         }
 
         public SessionDto GetById(int id)
@@ -45,7 +80,7 @@ namespace CinemaSystemAPI.Services
 
             if (session == null)
             {
-                throw new NotFoundExcption("Session not found");
+                return null;
             }
 
             var sessionDto = mapper.Map<SessionDto>(session);
@@ -53,9 +88,29 @@ namespace CinemaSystemAPI.Services
             return sessionDto;
         }
 
-        public void Update(int id, UpdateSession dto)
+        public Session Update(int id, UpdateSessionDto dto)
         {
-            throw new NotImplementedException();
+            if (dto == null || id == 0)
+            {
+                throw new IsNullOrEmpty("Objec is null or empty");
+            }
+
+            var session = cinemaDbContext.Sessions
+                .FirstOrDefault(x => x.Id == id);
+
+            if (session == null)
+            {
+                throw new NotFoundExcption("Session not found");
+            }
+
+            session.Start = dto.Start;
+            session.End = dto.End;
+           
+            cinemaDbContext.SaveChanges();
+
+            return session;
         }
+
+       
     }
 }

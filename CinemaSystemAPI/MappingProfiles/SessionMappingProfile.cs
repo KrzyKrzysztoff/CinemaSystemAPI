@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CinemaSystemAPI.MappingProfiles
 {
-    public class CinemaMappingProfile : Profile
+    public class SessionMappingProfile : Profile
     {
-        public CinemaMappingProfile()
+        public SessionMappingProfile()
         {
             CreateMap<Session, SessionDto>()
                 .ForMember(x => x.Capcity, y => y.MapFrom(z => z.Room.Capcity))
@@ -19,6 +19,12 @@ namespace CinemaSystemAPI.MappingProfiles
                 .ForMember(x => x.MovieName, y => y.MapFrom(z => z.Movie.Name))
                 .ForMember(x => x.Number, y => y.MapFrom(z => z.Room.Number))
                 .ForMember(x => x.RequiredAge, y => y.MapFrom(z => z.Movie.RequiredAge));
+
+            CreateMap<CreateSessionDto, Session>()
+                .ForMember(x => x.Room, y => y.MapFrom(z => new Room()
+                { Number = z.RoomNumber, Capcity = z.RoomCapcity }))
+                .ForMember(x => x.Movie, y => y.MapFrom(z => new Movie()
+                { Author = z.MovieAuthor, Category = z.MovieCategory, Name = z.MovieName, LengthInMinutes = z.MovieLengthInMinutes, RequiredAge = z.MovieRequiredAge }));
         }
     }
 }

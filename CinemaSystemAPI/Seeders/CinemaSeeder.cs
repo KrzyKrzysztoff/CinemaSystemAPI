@@ -33,28 +33,28 @@ namespace CinemaSystemAPI.Seeders
                 if (!cinemaDbContext.Sessions.Any())
                 {
                     var sessions = GetSessions();
-                    cinemaDbContext.AddRange(sessions);
+                    cinemaDbContext.Sessions.AddRange(sessions);
                     cinemaDbContext.SaveChanges();
                 }
 
                 if (!cinemaDbContext.Tickets.Any())
                 {
                     var ticekts = GetTickets();
-                    cinemaDbContext.AddRange(ticekts);
+                    cinemaDbContext.Tickets.AddRange(ticekts);
                     cinemaDbContext.SaveChanges();
                 }
 
                 if (!cinemaDbContext.Roles.Any())
                 {
                     var role = GetRole();
-                    cinemaDbContext.Add(role);
+                    cinemaDbContext.Roles.Add(role);
                     cinemaDbContext.SaveChanges();
                 }
 
                 if (!cinemaDbContext.Users.Any())
                 {
                     var users = GetUsers();
-                    cinemaDbContext.AddRange(users);
+                    cinemaDbContext.Users.AddRange(users);
                     cinemaDbContext.SaveChanges();
                 }
 

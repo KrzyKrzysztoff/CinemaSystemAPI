@@ -17,7 +17,7 @@ namespace CinemaSystemAPI.Entities
         public int RoomId { get; set; }
         public virtual Room Room{ get; set; }
 
-        public Ticket Ticket { get; set; }
+       
 
     }
 }

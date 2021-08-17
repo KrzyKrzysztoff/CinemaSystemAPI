@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace CinemaSystemAPI.Models
 {
-    public class UpdateSession
+    public class TicketUpdateDto
     {
+        public decimal Price { get; set; }
+        public int Seat { get; set; }
     }
 }
