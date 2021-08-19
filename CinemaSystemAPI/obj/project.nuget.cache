@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XOqIpt9MUOSwIYT85ut30tnaRDa3klEXsgUvdDrwSWOmRXMIakOl3c5Es/4QmshPh0+ZDOAzQ46h3yloLuBQ+w==",
+  "dgSpecHash": "MLcctnfC6ntJTnw69yfWdxNABMqY0iXd568WXRDDiN6yHqXLQA6xnzquMpNwZ+ZKYg9GiLZ5X8YDCfYI5DBeTw==",
   "success": true,
   "projectFilePath": "C:\\Users\\krzys\\Desktop\\CinemaSystem\\CinemaSystemAPI\\CinemaSystemAPI\\CinemaSystemAPI.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,9 @@
     "C:\\Users\\krzys\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\krzys\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\krzys\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\krzys\\.nuget\\packages\\nlog\\4.7.10\\nlog.4.7.10.nupkg.sha512",
+    "C:\\Users\\krzys\\.nuget\\packages\\nlog.extensions.logging\\1.7.3\\nlog.extensions.logging.1.7.3.nupkg.sha512",
+    "C:\\Users\\krzys\\.nuget\\packages\\nlog.web.aspnetcore\\4.13.0\\nlog.web.aspnetcore.4.13.0.nupkg.sha512",
     "C:\\Users\\krzys\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\krzys\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\krzys\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

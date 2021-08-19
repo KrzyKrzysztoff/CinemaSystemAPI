@@ -1,5 +1,6 @@
 ﻿using CinemaSystemAPI.Exceptions;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace CinemaSystemAPI.Middleware
                 logger.LogError(notFoundException, notFoundException.Message);
                 context.Response.StatusCode = 404;
                 await context.Response.WriteAsync(notFoundException.Message);
+            }
+            catch(SqlException sqlException)
+            {
+                logger.LogError(sqlException, sqlException.Message);
+                context.Response.StatusCode = 500;
+                await context.Response.WriteAsync(sqlException.Message);
             }
             catch (Exception ex)
             {
