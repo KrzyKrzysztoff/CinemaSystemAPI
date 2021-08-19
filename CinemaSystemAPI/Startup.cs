@@ -1,4 +1,5 @@
 using CinemaSystemAPI.Entities;
+using CinemaSystemAPI.Middleware;
 using CinemaSystemAPI.Seeders;
 using CinemaSystemAPI.Services;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +35,8 @@ namespace CinemaSystemAPI
             services.AddScoped<CinemaSeeder>();
             services.AddScoped<ISessionService, SessionService>();
             services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<IRoomService, RoomService>();
+            services.AddScoped<IMovieService, MovieService>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddDbContext<CinemaDbContext>();
             services.AddControllers();
@@ -54,7 +57,7 @@ namespace CinemaSystemAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CinemaSystemAPI v1"));
             }
-
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();

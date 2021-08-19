@@ -23,14 +23,14 @@ namespace CinemaSystemAPI.Controllers
         [HttpPost("create")]
         public ActionResult Create([FromBody] CreateTicketDto createTicketDto)
         {
-            var ticket = ticketService.Create(createTicketDto);
+            var ticketId = ticketService.Create(createTicketDto);
 
-            if (ticket == null)
+            if (ticketId == 0)
             {
                 return NotFound();
             }
 
-            return Ok(ticket);
+            return Created($"/api/ticket/getById/{ticketId}", null);
         }
 
         [HttpDelete("delete/{id}")]
@@ -55,7 +55,7 @@ namespace CinemaSystemAPI.Controllers
         }
 
         [HttpGet("getById/{id}")]
-        public ActionResult GetById([FromRoute] int id )
+        public ActionResult GetById([FromRoute] int id)
         {
             var ticket = ticketService.GetById(id);
 
@@ -67,10 +67,17 @@ namespace CinemaSystemAPI.Controllers
             return Ok(ticket);
         }
 
-        [HttpPut("update")]
-        public ActionResult Update()
+        [HttpPut("update/{id}")]
+        public ActionResult Update([FromBody] UpdateTicketDto dto, [FromRoute] int id)
         {
-            return Ok();
+            var ticketId = ticketService.Update(dto, id);
+
+            if (ticketId == 0)
+            {
+                return NotFound();
+            }
+
+            return Created($"/api/ticket/getById/{ticketId}", null);
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace CinemaSystemAPI.Exceptions
 {
-    public class NotFoundExcption:Exception
+    public class IsNullOrEmptyException : Exception
     {
-        public NotFoundExcption(string message):base(message)
+        public IsNullOrEmptyException(string message) : base(message)
         {
-                
+
         }
     }
 }

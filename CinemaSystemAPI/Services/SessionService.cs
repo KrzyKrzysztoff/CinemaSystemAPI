@@ -27,7 +27,7 @@ namespace CinemaSystemAPI.Services
 
             if (session == null)
             {
-                throw new IsNullOrEmpty("Object is null or empty");
+                throw new IsNullOrEmptyException("Object is null or empty");
             }
 
             cinemaDbContext.Sessions.Add(session);
@@ -43,7 +43,7 @@ namespace CinemaSystemAPI.Services
 
             if (id == 0 || session == null)
             {
-                throw new NotFoundExcption("Not found session");
+                throw new NotFoundException("Not found session");
             }
 
             cinemaDbContext.Remove(session);
@@ -92,7 +92,7 @@ namespace CinemaSystemAPI.Services
         {
             if (dto == null || id == 0)
             {
-                throw new IsNullOrEmpty("Objec is null or empty");
+                throw new IsNullOrEmptyException("Objec is null or empty");
             }
 
             var session = cinemaDbContext.Sessions
@@ -100,7 +100,7 @@ namespace CinemaSystemAPI.Services
 
             if (session == null)
             {
-                throw new NotFoundExcption("Session not found");
+                throw new NotFoundException("Session not found");
             }
 
             session.Start = dto.Start;

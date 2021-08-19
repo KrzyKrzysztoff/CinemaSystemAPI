@@ -9,10 +9,10 @@ namespace CinemaSystemAPI.Services
 {
     public interface ITicketService
     {
-        Ticket Create(CreateTicketDto dto);
+        int Create(CreateTicketDto dto);
         TicketDto GetById(int id);
         List<TicketDto> GetAll();
-        Ticket Update();
+        int Update(UpdateTicketDto dto, int id);
         void Delete(int id);
     }
 }

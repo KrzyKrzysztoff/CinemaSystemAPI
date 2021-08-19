@@ -21,11 +21,11 @@ namespace CinemaSystemAPI.Services
             this.mapper = mapper;
         }
 
-        public Ticket Create(CreateTicketDto dto)
+        public int Create(CreateTicketDto dto)
         {
             if (dto == null)
             {
-                return null;
+                return 0;
             }
 
             var ticket = mapper.Map<Ticket>(dto);
@@ -48,7 +48,7 @@ namespace CinemaSystemAPI.Services
 
             cinemaDbContext.SaveChanges();
 
-            return ticket;
+            return ticket.Id;
         }
 
         public void Delete(int id)
@@ -57,7 +57,7 @@ namespace CinemaSystemAPI.Services
 
             if (id == 0 || ticket == null)
             {
-                throw new NotFoundExcption("Ticket not found");
+                throw new NotFoundException("Ticket not found");
             }
 
             cinemaDbContext.Tickets.Remove(ticket);
@@ -101,10 +101,30 @@ namespace CinemaSystemAPI.Services
             return ticketDto;
         }
 
-        public Ticket Update(TicketUpdateDto ticketUpdateDto)
+        public int Update(UpdateTicketDto ticketUpdateDto, int id)
         {
 
-            throw new NotImplementedException();
+            if (ticketUpdateDto == null)
+            {
+                throw new IsNullOrEmptyException("Object is null or empty");
+            }
+
+            var ticket = cinemaDbContext.Tickets.FirstOrDefault(x => x.Id == id);
+
+            if (ticket == null)
+            {
+                return 0;
+            }
+
+            ticket.Price = ticketUpdateDto.Price;
+            ticket.Seat = ticketUpdateDto.Seat;
+
+            cinemaDbContext.SaveChanges();
+
+            return ticket.Id;
+
         }
+
+       
     }
 }
