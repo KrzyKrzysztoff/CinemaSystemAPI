@@ -2,6 +2,7 @@
 using CinemaSystemAPI.Entities;
 using CinemaSystemAPI.Models;
 using CinemaSystemAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace CinemaSystemAPI.Controllers
 {
     [Route("api/{sessionId}/room")]
     [ApiController]
+    [Authorize]
     public class RoomController : ControllerBase
     {
         private readonly CinemaDbContext cinemaDbContext;

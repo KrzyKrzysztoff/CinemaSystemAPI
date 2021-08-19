@@ -55,3 +55,23 @@
    at CinemaSystemAPI.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\krzys\Desktop\CinemaSystem\CinemaSystemAPI\CinemaSystemAPI\Middleware\ErrorHandlingMiddleware.cs:line 24
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:5,State:0,Class:20
+2021-08-19 14:20:38.1340||INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001 
+2021-08-19 14:20:38.1932||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000 
+2021-08-19 14:20:38.2059||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2021-08-19 14:20:38.2059||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2021-08-19 14:20:38.2239||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\krzys\Desktop\CinemaSystem\CinemaSystemAPI\CinemaSystemAPI 
+2021-08-19 14:31:07.6793||INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001 
+2021-08-19 14:31:07.7285||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000 
+2021-08-19 14:31:07.7383||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2021-08-19 14:31:07.7383||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2021-08-19 14:31:07.7482||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\krzys\Desktop\CinemaSystem\CinemaSystemAPI\CinemaSystemAPI 
+2021-08-19 15:17:26.2215||INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001 
+2021-08-19 15:17:26.2877||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000 
+2021-08-19 15:17:26.3037||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2021-08-19 15:17:26.3037||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2021-08-19 15:17:26.3129||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\krzys\Desktop\CinemaSystem\CinemaSystemAPI\CinemaSystemAPI 
+2021-08-19 15:22:14.6718||INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:5001 
+2021-08-19 15:22:14.7382||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5000 
+2021-08-19 15:22:14.7668||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2021-08-19 15:22:14.7668||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2021-08-19 15:22:14.7808||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\krzys\Desktop\CinemaSystem\CinemaSystemAPI\CinemaSystemAPI 

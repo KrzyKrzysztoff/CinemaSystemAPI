@@ -1,5 +1,6 @@
 ﻿using CinemaSystemAPI.Models;
 using CinemaSystemAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace CinemaSystemAPI.Controllers
 {
     [Route("api/session")]
     [ApiController]
+    [Authorize]
     public class SessionController : ControllerBase
     {
         private readonly ISessionService sessionService;
